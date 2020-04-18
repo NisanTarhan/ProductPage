@@ -1,8 +1,9 @@
 import Routes from './Routes';
-import Sorter from './Dropdown';
-import Filter from './SearchBar';
+import Sorter from './Sorter';
+import Filter from './Filter';
 import Card from './Card';
 import CardContainer from './CardContainer';
-import DetailSheet from './DetailSheet';
+import DetailContainer from './DetailContainer';
+import Main from './Main';
 
-export { Routes, Filter, Sorter, Card, CardContainer, DetailSheet };
+export { Routes, Filter, Sorter, Card, CardContainer, DetailContainer, Main };
