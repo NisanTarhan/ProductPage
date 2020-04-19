@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import styled from 'styled-components';
-import Home from './pages/Home'
+import Home from './pages/Home';
+import Detail from './pages/Detail';
 
 const AppLayout = styled.div`
   /* display: grid;
@@ -17,7 +18,8 @@ const AppLayout = styled.div`
 function App() {
   return (
     <AppLayout>
-      <Home />
+      {/* <Home /> */}
+      <Detail />
     </AppLayout>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Filter, CardContainer } from '../components';
+import { Filter, CardContainer } from '../HomeComponents';
 
 const MainLayout = styled.div`
     display: grid;

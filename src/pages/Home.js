@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Main, Sorter } from '../components';
+import { Main, Sorter } from '../components/HomeComponents';
 
 const HomeLayout = styled.div`
   display: grid;
