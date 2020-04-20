@@ -35,9 +35,10 @@ const handleSelectChange = e => {
 const Sorter = () => {
   return (
     <Select
+      defaultValue={"default"}
       onChange={handleSelectChange}
     >
-      <option value="" disabled selected>PRICE</option>
+      <option value="default" disabled>PRICE</option>
       <option value="descending">Descending</option>
       <option value="ascending">Ascending</option>
     </Select>

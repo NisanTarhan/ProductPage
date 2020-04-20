@@ -18,6 +18,13 @@ const FilterInput = styled.input`
     letter-spacing: 1px;
     font-size: 1rem;
     background: white;
+
+    ::placeholder {
+    color: rgb(51, 51, 58);
+    font-size: 0.75rem;
+    line-height: 2.5rem;
+    letter-spacing: 1px;
+}
 `
 
 const Filter = () => {
@@ -25,7 +32,7 @@ const Filter = () => {
         <FilterLayout>
             <FilterInput
                 type="search"
-                placeholder="FILTER"
+                placeholder="FILTERS"
             />
         </FilterLayout>
     )

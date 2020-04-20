@@ -33,14 +33,15 @@ const DescriptionArea = styled.div`
     padding-bottom: 1.25rem;
 `;
 
-const DescriptionContainer = () => {
+const DescriptionContainer = ({ name, price, content }) => {
+
     return (
         <DescriptionContainerLayout>
-            <Title>The Sideswept Dhoti + Bottom Line Grey (Silk)</Title>
-            <Price>SGD 139.90</Price>
+            <Title>{name}</Title>
+            <Price>${price}</Price>
             <DescriptionTitle>Description</DescriptionTitle>
             <DescriptionArea>
-                Inspired by the continuous length of the lunghi or sarong seen in hot climates everywhere from South Asia to the Horn of Africa and southern Arabian pen…
+                {content}
             </DescriptionArea>
         </DescriptionContainerLayout>
     )

@@ -13,7 +13,6 @@ const EmptyLayout = styled.div`
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05); 
-   background: red;
 `
 
 const Text = styled.p`

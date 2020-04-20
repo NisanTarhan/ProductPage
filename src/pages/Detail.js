@@ -13,11 +13,11 @@ const DetailLayout = styled.div`
   background: white;
 `
 
-const Detail = () => {
+const Detail = ({ match }) => {
   return (
     <DetailLayout>
       <DetailHeader />
-      <DetailContainer />
+      <DetailContainer id={match.params.id} />
     </DetailLayout>
   )
 }

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { GlobalContext } from '../../context/GlobalState';
 import Card from './Card';
+import Spinner from '../Spinner';
 
 const CardContainerLayout = styled.div`
     margin-right: 9.3rem;
@@ -12,9 +14,12 @@ const CardContainerLayout = styled.div`
 `
 
 const CardContainer = () => {
+    const { productsData, loading } = useContext(GlobalContext)
     return (
         <CardContainerLayout>
-            <Card />
+            {loading ? <Spinner /> : productsData?.map(({ products }) =>
+                <Card key={products.id} products={products} />)
+            }
         </CardContainerLayout>
     )
 }

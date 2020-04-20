@@ -11,6 +11,7 @@ const HomeLayout = styled.div`
   width: 100vw;
   height: 100vh;
   background: white;
+
 `
 const Header = styled.div`
   display: flex;
@@ -22,7 +23,6 @@ const Header = styled.div`
   -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
 `
-
 
 const Home = () => {
   return (
