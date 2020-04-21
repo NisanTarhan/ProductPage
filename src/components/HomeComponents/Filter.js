@@ -10,7 +10,7 @@ const FilterLayout = styled.div`
 const FilterInput = styled.input`
     height: 2.5rem;
     width: 13rem;
-   -webkit-box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.08);
+    -webkit-box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.08);
     -moz-box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.08);
     box-shadow: 0px 10px 12px 0px rgba(0,0,0,0.08);
     border: 0px solid gray;
