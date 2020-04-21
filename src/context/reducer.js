@@ -3,13 +3,21 @@ export default (state, action) => {
         case "ASCENDING_PRODUCTS":
             return {
                 ...state,
-                productsData: action.payload.productsData.sort((a, b) => a["deaths"] - b["deaths"])
+                productsData: action.payload.productsData.sort((a, b) => a["products"]["price"] - b["products"]["price"])
             }
 
         case "DESCENDING_PRODUCTS":
             return {
                 ...state,
-                productsData: action.payload.productsData.sort((a, b) => b["deaths"] - a["deaths"])
+                productsData: action.payload.productsData.sort((a, b) => b["products"]["price"] - a["products"]["price"])
+            }
+
+        case "FILTER_PRODUCTS":
+            return {
+                ...state,
+                filteredProducts: state.productsData.filter(({ products }) => {
+                    return products.badges.includes(action.payload.toLowerCase())
+                })
             }
 
         case "FETCH_SUCCESS":

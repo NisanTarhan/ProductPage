@@ -10,14 +10,14 @@ const CardContainerLayout = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(15rem, 1fr));
     grid-gap: 2rem;
-    /* background: red; */
 `
 
 const CardContainer = () => {
-    const { productsData, loading } = useContext(GlobalContext)
+    const { productsData, filteredProducts, loading } = useContext(GlobalContext)
+    const currentProductData = filteredProducts.length === 0 ? productsData : filteredProducts;
     return (
         <CardContainerLayout>
-            {loading ? <Spinner /> : productsData?.map(({ products }) =>
+            {loading ? <Spinner /> : currentProductData?.map(({ products }) =>
                 <Card key={products.id} products={products} />)
             }
         </CardContainerLayout>

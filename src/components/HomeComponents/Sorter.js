@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-
+import { GlobalContext } from '../../context/GlobalState';
 const Select = styled.select`
   width: 7rem;
   height: 2rem;
@@ -28,11 +28,17 @@ const Select = styled.select`
   }
 `;
 
-const handleSelectChange = e => {
-
-}
-
 const Sorter = () => {
+  const { assendingForPrice, descendingForPrice } = useContext(GlobalContext);
+
+  const handleSelectChange = e => {
+    if (e.target.value === "descending") {
+      descendingForPrice();
+    } else {
+      assendingForPrice();
+    }
+  };
+
   return (
     <Select
       defaultValue={"default"}

@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useEffect } from 'react';
-import { assendingForDeaths, descendingForDeaths, fetchData, errorDuringFetch } from './actions'
+import { assendingForPrice, descendingForPrice, filterByBadge, fetchData, errorDuringFetch } from './actions'
 import reducer from './reducer';
 import { element } from 'prop-types';
 
@@ -339,6 +339,7 @@ var data = [
 ];
 const initialState = {
     productsData: data,
+    filteredProducts: [],
     loading: false,
     error: ''
 }
@@ -361,9 +362,11 @@ export const GlobalProvider = ({ children }) => {
     return (
         <GlobalContext.Provider value={{
             productsData: state.productsData,
+            filteredProducts: state.filteredProducts,
             loading: state.loading,
-            assendingForDeaths: () => dispatch(assendingForDeaths(state)),
-            descendingForDeaths: () => dispatch(descendingForDeaths(state)),
+            assendingForPrice: () => dispatch(assendingForPrice(state)),
+            descendingForPrice: () => dispatch(descendingForPrice(state)),
+            filterByBadge: (data) => dispatch(filterByBadge(data)),
             getDetailOfProduct: loadFunctionWith(state.productsData)
         }}>
             {children}

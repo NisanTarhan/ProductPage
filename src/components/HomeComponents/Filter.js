@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { GlobalContext } from '../../context/GlobalState';
 
 const FilterLayout = styled.div`
     display: flex;
@@ -28,11 +29,18 @@ const FilterInput = styled.input`
 `
 
 const Filter = () => {
+    const { filterByBadge } = useContext(GlobalContext);
+
+    const handleSearchInput = e => {
+        filterByBadge(e.target.value)
+    }
+
     return (
         <FilterLayout>
             <FilterInput
                 type="search"
                 placeholder="FILTERS"
+                onChange={handleSearchInput}
             />
         </FilterLayout>
     )
