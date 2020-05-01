@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useEffect } from 'react';
+import React, { createContext, useReducer, useEffect, useCallback } from 'react';
 import { assendingForPrice, descendingForPrice, filterByBadge, fetchData, errorDuringFetch } from './actions'
 import reducer from './reducer';
 import { element } from 'prop-types';
@@ -33,16 +33,20 @@ export const GlobalProvider = ({ children }) => {
             .catch(error => dispatch(errorDuringFetch(error)))
     }, [])
 
+    const assendingForPrice = useCallback(() => dispatch(assendingForPrice(state)), [state])
+
+
+    const value = {
+        productsData: state.productsData,
+        filteredProducts: state.filteredProducts,
+        loading: state.loading,
+        assendingForPrice: () => dispatch(assendingForPrice(state)),
+        descendingForPrice: () => dispatch(descendingForPrice(state)),
+        filterByBadge: (data) => dispatch(filterByBadge(data)),
+        getDetailOfProduct: loadFunctionWith(state.productsData)
+    };
     return (
-        <GlobalContext.Provider value={{
-            productsData: state.productsData,
-            filteredProducts: state.filteredProducts,
-            loading: state.loading,
-            assendingForPrice: () => dispatch(assendingForPrice(state)),
-            descendingForPrice: () => dispatch(descendingForPrice(state)),
-            filterByBadge: (data) => dispatch(filterByBadge(data)),
-            getDetailOfProduct: loadFunctionWith(state.productsData)
-        }}>
+        <GlobalContext.Provider value={value}>
             {children}
         </GlobalContext.Provider>
     )
