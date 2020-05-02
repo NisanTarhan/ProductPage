@@ -3,13 +3,13 @@ import { GlobalContext } from '../../context/GlobalState';
 import { Select } from './styles';
 
 const Sorter = () => {
-  const { assendingForPrice, descendingForPrice } = useContext(GlobalContext);
+  const { ascendingForPrice, descendingForPrice } = useContext(GlobalContext);
 
   const handleSelectChange = e => {
     if (e.target.value === "descending") {
       descendingForPrice();
     } else {
-      assendingForPrice();
+      ascendingForPrice();
     }
   };
 

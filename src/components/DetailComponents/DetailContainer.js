@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
+import { string } from 'prop-types';
 import { GlobalContext } from '../../context/GlobalState';
 import DescriptionContainer from './DescriptionContainer';
 import { DetailContainerLayout, ImageContainer, Image } from './styles';
 
 const DetailContainer = ({ id }) => {
     const { getDetailOfProduct } = useContext(GlobalContext)
-
     const detailData = getDetailOfProduct(id);
 
     return (
@@ -20,6 +20,10 @@ const DetailContainer = ({ id }) => {
             />
         </DetailContainerLayout>
     )
+}
+
+DetailContainer.propTypes = {
+    id: string.isRequired
 }
 
 export default DetailContainer;

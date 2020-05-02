@@ -6,7 +6,7 @@ import {
     FETCH_ERROR
 } from './types';
 
-export function assendingForPrice(state) {
+export function ascendingForPrice(state) {
     return {
         type: ASCENDING_PRODUCTS,
         payload: { ...state }

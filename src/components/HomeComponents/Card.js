@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { object } from 'prop-types';
 import { CardLayout, Image, Badge, Text, PriceTag } from './styles';
 
 const Card = ({ products }) => {
@@ -16,6 +17,10 @@ const Card = ({ products }) => {
             </CardLayout>
         </Link>
     )
+}
+
+Card.propTypes = {
+    products: object
 }
 
 export default Card;
