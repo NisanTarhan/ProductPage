@@ -37,9 +37,9 @@ export const GlobalProvider = ({ children }) => {
         productsData: state.productsData,
         filteredProducts: state.filteredProducts,
         loading: state.loading,
-        ascendingForPrice: () => dispatch(ascendingForPrice(state)),
-        descendingForPrice: () => dispatch(descendingForPrice(state)),
-        filterByBadge: (data) => dispatch(filterByBadge(data)),
+        ascendingForPrice: useCallback(() => dispatch(ascendingForPrice()), [dispatch]),
+        descendingForPrice: useCallback(() => dispatch(descendingForPrice()), [dispatch]),
+        filterByBadge: useCallback((data) => dispatch(filterByBadge(data)), [dispatch]),
         getDetailOfProduct: loadFunctionWith(state.productsData)
     };
     return (
@@ -47,5 +47,4 @@ export const GlobalProvider = ({ children }) => {
             {children}
         </GlobalContext.Provider>
     )
-
 }

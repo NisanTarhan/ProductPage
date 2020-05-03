@@ -3,13 +3,15 @@ export default (state, action) => {
         case "ASCENDING_PRODUCTS":
             return {
                 ...state,
-                productsData: action.payload.productsData.sort((a, b) => a["products"]["price"] - b["products"]["price"])
+                productsData: [...state.productsData.sort((a, b) => a["products"]["price"] - b["products"]["price"])],
+                filteredProducts: [...state.filteredProducts.sort((a, b) => a["products"]["price"] - b["products"]["price"])]
             }
 
         case "DESCENDING_PRODUCTS":
             return {
                 ...state,
-                productsData: action.payload.productsData.sort((a, b) => b["products"]["price"] - a["products"]["price"])
+                productsData: [...state.productsData.sort((a, b) => b["products"]["price"] - a["products"]["price"])],
+                filteredProducts: [...state.filteredProducts.sort((a, b) => b["products"]["price"] - a["products"]["price"])]
             }
 
         case "FILTER_PRODUCTS":

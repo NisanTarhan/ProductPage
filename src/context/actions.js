@@ -9,14 +9,12 @@ import {
 export function ascendingForPrice(state) {
     return {
         type: ASCENDING_PRODUCTS,
-        payload: { ...state }
     }
 };
 
-export function descendingForPrice(state) {
+export function descendingForPrice() {
     return {
         type: DESCENDING_PRODUCTS,
-        payload: { ...state }
     }
 };
 
